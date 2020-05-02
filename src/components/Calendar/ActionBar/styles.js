@@ -15,7 +15,7 @@ export const MonthName = styled.span`
   line-height: 20px;
   font-weight: 300;
   cursor: pointer;
-  color: ${colors.blue};
+  color: ${colors.primary};
 
   padding: 10px 20px;
   border-radius: 20px;
@@ -29,7 +29,7 @@ export const MonthName = styled.span`
 export const ArrowLeft = styled(FaChevronLeft)`
   cursor: pointer;
   font-size: 16px;
-  color: ${colors.blue};
+  color: ${colors.primary};
   border-radius: 50%;
   box-sizing: content-box;
   padding: 5px;
@@ -42,7 +42,7 @@ export const ArrowLeft = styled(FaChevronLeft)`
 export const ArrowRight = styled(FaChevronRight)`
   cursor: pointer;
   font-size: 16px;
-  color: ${colors.blue};
+  color: ${colors.primary};
   border-radius: 50%;
   box-sizing: content-box;
   padding: 5px;

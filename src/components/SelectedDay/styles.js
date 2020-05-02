@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import colors from '../../theme/colors';
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   padding: 50px 30px;
   color: ${colors.white};
-  background-color: ${colors.blue};
+  background-color: ${colors.primary};
 `;
 
 export const DayName = styled.span`

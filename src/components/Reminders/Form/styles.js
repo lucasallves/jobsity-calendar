@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 
 export const Container = styled.div`
   background-color: ${colors.greyLightest};
-  width: 50%;
+  width: 100%;
   height: 100%;
   overflow-y: auto;
   padding: 40px 40px 0 40px;

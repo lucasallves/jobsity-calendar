@@ -34,7 +34,7 @@ export const YearNavigation = styled.div`
 export const ArrowLeft = styled(FaChevronLeft)`
   cursor: pointer;
   font-size: 22px;
-  color: ${colors.blue};
+  color: ${colors.primary};
   border-radius: 50%;
   box-sizing: content-box;
   padding: 5px;
@@ -47,7 +47,7 @@ export const ArrowLeft = styled(FaChevronLeft)`
 export const ArrowRight = styled(FaChevronRight)`
   cursor: pointer;
   font-size: 22px;
-  color: ${colors.blue};
+  color: ${colors.primary};
   border-radius: 50%;
   box-sizing: content-box;
   padding: 5px;
@@ -60,7 +60,7 @@ export const ArrowRight = styled(FaChevronRight)`
 export const Year = styled.span`
   display: block;
   text-align: center;
-  color: ${colors.blue};
+  color: ${colors.primary};
   font-size: 40px;
   line-height: 40px;
   font-weight: 300;
@@ -91,7 +91,7 @@ export const Month = styled.div`
   border-radius: 7px;
 
   opacity: ${({ active }) => active ? '1' : '0.5'};
-  background-color: ${({ active }) => active ? colors.blue : colors.greyLight};
+  background-color: ${({ active }) => active ? colors.primary : colors.greyLight};
   color: ${colors.white};
   cursor: pointer;
   transition: opacity .3s;

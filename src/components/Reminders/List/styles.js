@@ -24,7 +24,8 @@ export const ListItem = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  background-color: rgba(0, 0, 0, .1);
+  /* background-color: rgba(0, 0, 0, .1); */
+  background-color: ${({ color }) => color};
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 5px 15px;

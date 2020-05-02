@@ -31,7 +31,7 @@ function App() {
       date: '2020-5-2',
       time: '8 AM',
       city: 'Pelotas',
-      color: '#999999',
+      color: '#134BD7',
       weather: {
         id: 803,
         description: 'broken clouds',
@@ -45,7 +45,7 @@ function App() {
       date: '2020-5-2',
       time: '6 PM',
       city: 'New York',
-      color: '#999999',
+      color: '#134BD7',
       weather: {
         id: 803,
         description: 'broken clouds',

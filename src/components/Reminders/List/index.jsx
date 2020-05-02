@@ -54,7 +54,7 @@ function Reminders() {
             const { id, text, city, time, weather } = reminder;
 
             return (
-              <ListItem key={id + text} onClick={() => onListItemClick(reminder)}>
+              <ListItem key={id + text} onClick={() => onListItemClick(reminder)} color={reminder.color}>
                 <ListItemText>{text}</ListItemText>
                 <ListItemText>{city}, {time}</ListItemText>
                 <IconWeather src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />

@@ -18,7 +18,7 @@ export const Container = styled.button`
   outline: none;
 
   position: absolute;
-  left: 30px;
+  right: 30px;
   bottom: 30px;
 
   &:hover {

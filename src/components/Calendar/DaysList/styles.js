@@ -25,7 +25,7 @@ export const Day = styled.span`
   width: 24px;
   height: 24px;
 
-  background-color: ${({ active }) => active ? colors.blue : 'transparent'};
+  background-color: ${({ active }) => active ? colors.primary : 'transparent'};
   color: ${({ active }) => active ? colors.white : colors.greyLight};
 
   font-size: 16px;
