@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaPlus } from 'react-icons/fa';
 import colors from '../../../theme/colors';
 
 export const Container = styled.button`
@@ -23,10 +22,4 @@ export const Label = styled.span`
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
-`;
-
-export const IconPlus = styled(FaPlus)`
-  color: ${colors.greyDark};
-  font-size: 14px;
-  margin-right: 5px;
 `;

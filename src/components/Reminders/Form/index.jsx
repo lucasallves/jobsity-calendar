@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import CalendarContext from '../../../context/Calendar';
-import CreateReminderButton from '../CreateReminderButton';
+import UIButton from '../../ui/Button';
 import weatherService from '../../../services/weather';
 import { titlelize, formatDate } from '../../../utils/formatters';
 import ColorPicker from '../../ui/ColorPicker';
@@ -25,9 +25,9 @@ function RemindersForm(props) {
   const [reminder, setReminder] = useState(null);
 
   useEffect(() => {
-    setReminder(data);
+    setReminder({ ...data, date: selectedDate.fullDay });
     setEditing(!!data.id);
-  }, [data]);
+  }, [data, selectedDate.fullDay]);
 
   function onInputChange(key, value) {
     const _value = key === 'text' ? value.substring(0, 30) : value;
@@ -122,7 +122,7 @@ function RemindersForm(props) {
           <ColorPicker onChange={color => onInputChange('color', color)} value={reminder.color} />
         </FormItem>
 
-        <CreateReminderButton onClick={saveReminder} />
+        <UIButton label={editing ? 'Save' : 'Create'} onClick={saveReminder} />
       </Form>
     </Container>
   );

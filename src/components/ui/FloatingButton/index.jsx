@@ -1,15 +1,15 @@
 import React from 'react';
 import { Container, IconPlus, Label } from './styles';
 
-function CreateReminderButton(props) {
-  const { onClick } = props;
+function FloatingButton(props) {
+  const { label, onClick } = props;
 
   return (
     <Container onClick={onClick}>
       <IconPlus />
-      <Label>Create</Label>
+      <Label>{label}</Label>
     </Container>
   );
 }
 
-export default CreateReminderButton;
+export default FloatingButton;

@@ -4,20 +4,14 @@ import colors from '../../theme/colors';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   padding: 50px 30px;
   color: ${colors.white};
   background-color: ${colors.blue};
-`;
-
-export const DayContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 `;
 
 export const DayName = styled.span`

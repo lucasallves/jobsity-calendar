@@ -28,7 +28,7 @@ function App() {
     {
       id: 1,
       text: 'Meeting with Jobsity',
-      date: '2020-05-01',
+      date: '2020-5-2',
       time: '8 AM',
       city: 'Pelotas',
       color: '#999999',
@@ -42,7 +42,7 @@ function App() {
     {
       id: 2,
       text: 'Buy food',
-      date: '2020-05-01',
+      date: '2020-5-2',
       time: '6 PM',
       city: 'New York',
       color: '#999999',

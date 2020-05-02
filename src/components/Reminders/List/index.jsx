@@ -1,18 +1,21 @@
 import React, { useContext, useState } from 'react';
 import CalendarContext from '../../../context/Calendar';
-import CreateReminderButton from '../CreateReminderButton';
+import FloatingButton from '../../ui/FloatingButton';
 import RemindersForm from '../Form';
 import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText } from './styles';
 
 function Reminders() {
-  const { reminders } = useContext(CalendarContext);
+  const { reminders, selectedDate } = useContext(CalendarContext);
+  const todayReminders = reminders.filter(reminder => {
+    return reminder.date === selectedDate.fullDay;
+  });
 
   const DEFAULT_FORM_DATA = {
     text: '',
-    date: '11/03/2021',
-    time: '3PM',
+    date: '',
+    time: '',
     city: '',
-    color: 'blue',
+    color: '',
     weather: {}
   }
 
@@ -39,7 +42,7 @@ function Reminders() {
 
   function _renderEmptyState() {
     return (
-      <EmptyMessage>No reminders yet.<br />Create one and always be there.</EmptyMessage>
+      <EmptyMessage>No reminders on this day.<br />Create one and always be there.</EmptyMessage>
     );
   }
 
@@ -47,7 +50,7 @@ function Reminders() {
     return (
       <List>
         {
-          reminders.map(reminder => {
+          todayReminders.map(reminder => {
             const { id, text, city, time, weather } = reminder;
 
             return (
@@ -65,10 +68,10 @@ function Reminders() {
 
   return reminders && (
     <Container>
-      {!!!reminders.length && _renderEmptyState()}
-      {!!reminders.length && _renderRemindersList()}
+      {!!!todayReminders.length && _renderEmptyState()}
+      {!!todayReminders.length && _renderRemindersList()}
 
-      <CreateReminderButton onClick={toggleFormVisibility} />
+      <FloatingButton label="Create" onClick={toggleFormVisibility} />
       <RemindersForm
         visible={formVisibility}
         data={formData}
