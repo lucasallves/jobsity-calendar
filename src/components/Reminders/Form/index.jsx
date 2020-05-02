@@ -15,12 +15,13 @@ import {
   InputText,
   WeatherContainer,
   WeatherImage,
-  WeatherDescription
+  WeatherDescription,
+  ButtonsContainer
 } from './styles';
 
 function RemindersForm(props) {
   const { visible, actions, data } = props;
-  const { selectedDate, addReminder, updateReminder } = useContext(CalendarContext);
+  const { selectedDate, addReminder, updateReminder, deleteSingleReminder } = useContext(CalendarContext);
   const [editing, setEditing] = useState(false);
   const [reminder, setReminder] = useState(null);
 
@@ -54,6 +55,12 @@ function RemindersForm(props) {
       addReminder(payload);
     }
 
+    actions.onClose();
+    actions.clearForm();
+  }
+
+  function deleteReminder() {
+    deleteSingleReminder(reminder.id);
     actions.onClose();
     actions.clearForm();
   }
@@ -122,7 +129,10 @@ function RemindersForm(props) {
           <ColorPicker onChange={color => onInputChange('color', color)} value={reminder.color} />
         </FormItem>
 
-        <UIButton label={editing ? 'Save' : 'Create'} onClick={saveReminder} />
+        <ButtonsContainer>
+          <UIButton label={editing ? 'Save' : 'Create'} onClick={saveReminder} />
+          {editing && <UIButton label="Delete" onClick={deleteReminder} />}
+        </ButtonsContainer>
       </Form>
     </Container>
   );

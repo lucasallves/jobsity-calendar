@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 import CalendarContext from '../../../context/Calendar';
 import FloatingButton from '../../ui/FloatingButton';
 import RemindersForm from '../Form';
-import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText } from './styles';
+import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText, ClearLink } from './styles';
 
 function Reminders() {
-  const { reminders, selectedDate } = useContext(CalendarContext);
+  const { reminders, selectedDate, deleteRemindersByDate } = useContext(CalendarContext);
   const todayReminders = reminders.filter(reminder => {
     return reminder.date === selectedDate.fullDay;
   });
@@ -68,8 +68,12 @@ function Reminders() {
 
   return reminders && (
     <Container>
-      {!!!todayReminders.length && _renderEmptyState()}
-      {!!todayReminders.length && _renderRemindersList()}
+      {!todayReminders.length && _renderEmptyState()}
+      {todayReminders.length > 0 && _renderRemindersList()}
+
+      {todayReminders.length > 0 && (
+        <ClearLink onClick={() => deleteRemindersByDate(selectedDate.fullDay)}>Clear All Day</ClearLink>
+      )}
 
       <FloatingButton label="Create" onClick={toggleFormVisibility} />
       <RemindersForm

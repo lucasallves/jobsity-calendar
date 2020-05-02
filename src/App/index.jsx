@@ -68,12 +68,18 @@ function App() {
       data['id'] = Math.random();
       setSavedReminders([...savedReminders, data])
     },
-    updateReminder: (data) => {
+    updateReminder: data => {
       const updatedReminders = savedReminders.map(reminder => {
         if (reminder.id === data.id) return data;
         return reminder;
       });
       setSavedReminders(updatedReminders);
+    },
+    deleteSingleReminder: id => {
+      setSavedReminders(savedReminders.filter(reminder => reminder.id !== id));
+    },
+    deleteRemindersByDate: date => {
+      setSavedReminders(savedReminders.filter(reminder => reminder.date !== date));
     }
   }
 

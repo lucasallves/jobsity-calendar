@@ -23,8 +23,6 @@ export const ListItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* background-color: rgba(0, 0, 0, .1); */
   background-color: ${({ color }) => color};
   border-radius: 20px;
   margin-bottom: 10px;
@@ -53,4 +51,14 @@ export const IconWeather = styled.img`
 export const ListItemText = styled.span`
   font-size: 13px;
   font-weight: 300;
+`;
+
+export const ClearLink = styled.span`
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  cursor: pointer;
 `;

@@ -76,3 +76,8 @@ export const WeatherDescription = styled.span`
   font-size: 14px;
   padding-left: 10px;
 `;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
