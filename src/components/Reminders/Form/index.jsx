@@ -30,6 +30,11 @@ function RemindersForm(props) {
     setEditing(!!data.id);
   }, [data, selectedDate.fullDay]);
 
+  useEffect(() => {
+    const formElement = document.querySelector('.reminders-form');
+    if (formElement) formElement.scrollTo(0, 0);
+  }, [visible]);
+
   function onInputChange(key, value) {
     const _value = key === 'text' ? value.substring(0, 30) : value;
     setReminder({ ...reminder, ...{ [key]: _value } });
@@ -79,7 +84,7 @@ function RemindersForm(props) {
   }
 
   return reminder && (
-    <Container visible={visible}>
+    <Container visible={visible} className="reminders-form">
       <Close onClick={actions.onClose} />
       <Title> {editing ? 'Edit' : 'New'} Reminder </Title>
 
@@ -131,7 +136,7 @@ function RemindersForm(props) {
 
         <ButtonsContainer>
           <UIButton label={editing ? 'Save' : 'Create'} onClick={saveReminder} />
-          {editing && <UIButton label="Delete" onClick={deleteReminder} />}
+          {editing && <UIButton label="Delete" onClick={deleteReminder} type="danger" />}
         </ButtonsContainer>
       </Form>
     </Container>
