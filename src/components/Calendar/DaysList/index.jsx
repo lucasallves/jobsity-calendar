@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Container, DayContainer, Day } from './styles';
 import utils from '../../../utils/calendar';
 import CalendarContext from '../../../context/Calendar';
+import { Container, DayContainer, Day, ReminderDot } from './styles';
 
 function DaysList() {
-  const { selectedDate, navigation, setDate } = useContext(CalendarContext);
+  const { selectedDate, navigation, setDate, reminders } = useContext(CalendarContext);
   const [monthData, setMonthData] = useState(null);
 
   useEffect(() => {
@@ -19,11 +19,16 @@ function DaysList() {
     return isSameDayNumber && isSameMonth && isSameYear;
   }
 
+  function dayHasReminders(fullDay) {
+    return !!reminders.find(reminder => reminder.date === fullDay);
+  }
+
   return monthData && (
     <Container>
       {
         monthData.previousMonthDays.map(day => (
           <DayContainer key={day.fullDay} onClick={() => setDate(day)}>
+            {dayHasReminders(day.fullDay) && <ReminderDot />}
             <Day>{day.day}</Day>
           </DayContainer>
         ))
@@ -32,6 +37,7 @@ function DaysList() {
       {
         monthData.daysInMonth.map(day => (
           <DayContainer key={day.fullDay} currentMonth={true} onClick={() => setDate(day)}>
+            {dayHasReminders(day.fullDay) && <ReminderDot />}
             <Day active={isActiveDay(day)}>{day.day}</Day>
           </DayContainer>
         ))
@@ -40,6 +46,7 @@ function DaysList() {
       {
         monthData.nextMonthDays.map(day => (
           <DayContainer key={day.fullDay} onClick={() => setDate(day)}>
+            {dayHasReminders(day.fullDay) && <ReminderDot />}
             <Day>{day.day}</Day>
           </DayContainer>
         ))

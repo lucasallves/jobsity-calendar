@@ -2,13 +2,12 @@ import React, { useContext, useState } from 'react';
 import CalendarContext from '../../../context/Calendar';
 import FloatingButton from '../../ui/FloatingButton';
 import RemindersForm from '../Form';
+import utils from '../../../utils';
 import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText, ClearLink } from './styles';
 
 function Reminders() {
   const { reminders, selectedDate, deleteRemindersByDate } = useContext(CalendarContext);
-  const todayReminders = reminders.filter(reminder => {
-    return reminder.date === selectedDate.fullDay;
-  });
+  const todayReminders = utils.orderByTime(reminders.filter(reminder => reminder.date === selectedDate.fullDay));
 
   const DEFAULT_FORM_DATA = {
     text: '',

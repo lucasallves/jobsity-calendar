@@ -40,6 +40,12 @@ function RemindersForm(props) {
     setReminder({ ...reminder, ...{ [key]: _value } });
   }
 
+  function onTimeChange(value) {
+    let time = value.substring(0, 4);
+    time = `${value.substring(0, 2)}:${value.substring(2)}`;
+    setReminder({ ...reminder, ...{ time } });
+  }
+
   async function saveReminder() {
     if (!formIsValid()) {
       return false;
@@ -127,7 +133,7 @@ function RemindersForm(props) {
             type="text"
             placeholder="What time?"
             value={reminder.time}
-            onChange={e => onInputChange('time', e.target.value)} />
+            onChange={e => onTimeChange(e.target.value)} />
         </FormItem>
         <FormItem>
           <Label>Pick a color:</Label>

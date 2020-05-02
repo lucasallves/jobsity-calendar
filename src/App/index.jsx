@@ -29,28 +29,28 @@ function App() {
       id: 1,
       text: 'Meeting with Jobsity',
       date: '2020-5-2',
-      time: '8 AM',
+      time: '16:00',
       city: 'Pelotas',
-      color: '#134BD7',
+      color: '#D21F3C',
       weather: {
-        id: 803,
-        description: 'broken clouds',
-        icon: '04d',
-        main: 'Clouds',
+        id: 800,
+        description: 'clear sky',
+        icon: '01d',
+        main: 'Clear'
       }
     },
     {
       id: 2,
       text: 'Buy food',
       date: '2020-5-2',
-      time: '6 PM',
+      time: '08:00',
       city: 'New York',
       color: '#134BD7',
       weather: {
         id: 803,
         description: 'broken clouds',
         icon: '04d',
-        main: 'Clouds',
+        main: 'Clouds'
       }
     }
   ]);

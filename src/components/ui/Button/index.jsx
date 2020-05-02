@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Label } from './styles';
-import colors from '../../../theme/colors';
 
 function Button(props) {
   const { label, onClick, type } = props;

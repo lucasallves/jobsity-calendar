@@ -9,6 +9,7 @@ export const Container = styled.div`
 `;
 
 export const DayContainer = styled.span`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,4 +37,17 @@ export const Day = styled.span`
   cursor: pointer;
   border-radius: 50%;
   transition: background-color .3s;
+`;
+
+export const ReminderDot = styled.span`
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #D21F3C;
+
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin-left: -3px;
 `;

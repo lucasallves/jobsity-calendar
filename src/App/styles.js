@@ -14,9 +14,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
   height: 100%;
-  max-height: 400px;
+  max-height: 450px;
   background-color: ${colors.white};
 `;
 
