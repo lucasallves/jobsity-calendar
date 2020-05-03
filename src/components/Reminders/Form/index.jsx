@@ -13,6 +13,7 @@ import {
   FormItem,
   Label,
   InputText,
+  InputTime,
   WeatherContainer,
   WeatherImage,
   WeatherDescription,
@@ -38,12 +39,6 @@ function RemindersForm(props) {
   function onInputChange(key, value) {
     const _value = key === 'text' ? value.substring(0, 30) : value;
     setReminder({ ...reminder, ...{ [key]: _value } });
-  }
-
-  function onTimeChange(value) {
-    let time = value.substring(0, 4);
-    time = `${value.substring(0, 2)}:${value.substring(2)}`;
-    setReminder({ ...reminder, ...{ time } });
   }
 
   async function saveReminder() {
@@ -125,13 +120,12 @@ function RemindersForm(props) {
             placeholder="Date"
             value={formatDate(selectedDate)}
             onChange={() => { }}
-            disabled />
+            disabled={true} />
         </FormItem>
         <FormItem>
           <Label>Time:</Label>
-          <InputText
-            type="text"
-            placeholder="What time?"
+          <InputTime
+            mask="99:99"
             value={reminder.time}
             onChange={e => onInputChange('time', e.target.value)} />
         </FormItem>

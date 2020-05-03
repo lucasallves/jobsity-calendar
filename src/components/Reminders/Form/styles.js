@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../../theme/colors';
 import { FaTimes } from 'react-icons/fa';
+import InputMask from "react-input-mask";
 
 export const Container = styled.div`
   background-color: ${colors.greyLightest};
@@ -58,7 +59,18 @@ export const InputText = styled.input`
   padding: 0 15px;
   outline: none;
   font-size: 12px;
-  color: ${colors.greyDark};
+  color: ${colors.primary};
+`;
+
+export const InputTime = styled(InputMask)`
+  width: 100%;
+  border: none;
+  height: 30px;
+  border-radius: 15px;
+  padding: 0 15px;
+  outline: none;
+  font-size: 12px;
+  color: ${colors.primary};
 `;
 
 export const WeatherContainer = styled.div`
