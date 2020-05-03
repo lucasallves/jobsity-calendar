@@ -60,6 +60,8 @@ export const InputText = styled.input`
   outline: none;
   font-size: 12px;
   color: ${colors.primary};
+
+  opacity: ${({ disabled }) => disabled ? '.3' : '1'};
 `;
 
 export const InputTime = styled(InputMask)`
