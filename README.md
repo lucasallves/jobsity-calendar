@@ -5,7 +5,7 @@ A demo calendar using React.
 Install all the project dependecies.
 
 ```bash
-- yarn # npm install
+yarn # npm install
 ```
 
 Create your own `.env` using the template.
@@ -23,11 +23,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Testing
 Launches the test runner in the interactive watch mode.
 ```bash
-yarn test
+yarn test # npm run test
 ```
 
 ## Build
 Builds the app for production to the `build` folder.
 ```bash
-yarn build
+yarn build # npm run build
 ```
