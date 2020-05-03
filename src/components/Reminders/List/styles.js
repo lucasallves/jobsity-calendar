@@ -15,7 +15,7 @@ export const EmptyMessage = styled.span`
   font-size: 16px;
   font-weight: 300;
   line-height: 22px;
-  padding-bottom: 30px;
+  padding: 50px 0;
 `;
 
 export const ListItem = styled.div`
