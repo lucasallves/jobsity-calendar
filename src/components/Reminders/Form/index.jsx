@@ -108,6 +108,7 @@ function RemindersForm(props) {
         <FormItem>
           <Label>Reminder ({reminder.text.length}/30):</Label>
           <InputText
+            className="reminderText"
             type="text"
             placeholder="What do you want to remind?"
             value={reminder.text}
