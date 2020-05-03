@@ -7,7 +7,8 @@ import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText, Cle
 
 function Reminders() {
   const { reminders, selectedDate, deleteRemindersByDate } = useContext(CalendarContext);
-  const todayReminders = utils.sortByTime(reminders.filter(reminder => reminder.date === selectedDate.fullDay));
+  const todayReminders = reminders.filter(reminder => reminder.date === selectedDate.fullDay);
+  const sortedTodayReminders = utils.sortByTime(todayReminders);
 
   const DEFAULT_FORM_DATA = {
     text: '',
@@ -41,7 +42,7 @@ function Reminders() {
 
   function _renderEmptyState() {
     return (
-      <EmptyMessage>No reminders on this day.<br />Create one and always be there.</EmptyMessage>
+      <EmptyMessage>No reminders on this day.<br />Create reminders on your calendar anytime.</EmptyMessage>
     );
   }
 
@@ -49,11 +50,11 @@ function Reminders() {
     return (
       <List>
         {
-          todayReminders.map(reminder => {
+          sortedTodayReminders.map(reminder => {
             const { id, text, city, time, weather } = reminder;
 
             return (
-              <ListItem key={id + text} onClick={() => onListItemClick(reminder)} color={reminder.color}>
+              <ListItem key={id} onClick={() => onListItemClick(reminder)} color={reminder.color}>
                 <ListItemText>{text}</ListItemText>
                 <ListItemText>{city}, {time}</ListItemText>
                 <IconWeather src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />
@@ -67,10 +68,9 @@ function Reminders() {
 
   return reminders && (
     <Container>
-      {!todayReminders.length && _renderEmptyState()}
-      {todayReminders.length > 0 && _renderRemindersList()}
-
-      {todayReminders.length > 0 && (
+      {!sortedTodayReminders.length && _renderEmptyState()}
+      {sortedTodayReminders.length > 0 && _renderRemindersList()}
+      {sortedTodayReminders.length > 0 && (
         <ClearLink onClick={() => deleteRemindersByDate(selectedDate.fullDay)}>Clear All Day</ClearLink>
       )}
 

@@ -17,42 +17,8 @@ function App() {
     year,
     fullDay: `${year}-${month}-${day}`
   });
-
-  const [selectedNavigation, setSelectedNavigation] = useState({
-    month,
-    year
-  });
-
-  const [savedReminders, setSavedReminders] = useState([
-    {
-      id: 1,
-      text: 'Meeting with Jobsity',
-      date: '2020-5-2',
-      time: '16:00',
-      city: 'Pelotas',
-      color: '#D21F3C',
-      weather: {
-        id: 800,
-        description: 'clear sky',
-        icon: '01d',
-        main: 'Clear'
-      }
-    },
-    {
-      id: 2,
-      text: 'Buy food',
-      date: '2020-5-2',
-      time: '08:00',
-      city: 'New York',
-      color: '#134BD7',
-      weather: {
-        id: 803,
-        description: 'broken clouds',
-        icon: '04d',
-        main: 'Clouds'
-      }
-    }
-  ]);
+  const [selectedNavigation, setSelectedNavigation] = useState({ month, year });
+  const [savedReminders, setSavedReminders] = useState([]);
 
   const contextData = {
     selectedDate: selectedDate,

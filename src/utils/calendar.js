@@ -1,6 +1,9 @@
 import dayjs from 'dayjs';
 
-function getDataForMonthYear(month, year) {
+export const monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export const weekNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+export function getDataForMonthYear(month, year) {
   const firstDay = `${year}-${month}-01`;
   const numberOfdaysInMonth = dayjs(firstDay).daysInMonth();
   const lastDay = `${year}-${month}-${numberOfdaysInMonth}`;
@@ -25,7 +28,7 @@ function getDataForMonthYear(month, year) {
   }
 }
 
-function getDaysInMonth(month, year, numberOfdaysInMonth) {
+export function getDaysInMonth(month, year, numberOfdaysInMonth) {
   let daysInMonth = [];
 
   for (let i = 1; i <= numberOfdaysInMonth; i++) {
@@ -35,7 +38,7 @@ function getDaysInMonth(month, year, numberOfdaysInMonth) {
   return daysInMonth;
 }
 
-function getPreviousMonthDays(month, year, firstDayOfWeek) {
+export function getPreviousMonthDays(month, year, firstDayOfWeek) {
   let prevMonth = month - 1;
   if (prevMonth < 0) prevMonth = 12;
 
@@ -52,7 +55,7 @@ function getPreviousMonthDays(month, year, firstDayOfWeek) {
   return previousDays;
 }
 
-function getNextMonthDays(month, year, countDays) {
+export function getNextMonthDays(month, year, countDays) {
   let nextMonth = month + 1;
   if (nextMonth > 12) nextMonth = 1;
 
@@ -68,7 +71,7 @@ function getNextMonthDays(month, year, countDays) {
   return missingDays;
 }
 
-function formatDay(day, month, year) {
+export function formatDay(day, month, year) {
   return {
     day: parseInt(day),
     month: parseInt(month),
@@ -77,12 +80,12 @@ function formatDay(day, month, year) {
   }
 }
 
-function getMonthName(monthNumber) {
+export function getMonthName(monthNumber) {
   return dayjs().month(monthNumber).format('MMMM');
 }
 
-function getDayOfWeekName(date) {
+export function getDayOfWeekName(date) {
   return dayjs(date.fullDay).format('dddd');
 }
 
-export default { getDataForMonthYear, getMonthName, getDayOfWeekName };
+export default { monthList, weekNames, getDataForMonthYear, getMonthName, getDayOfWeekName };

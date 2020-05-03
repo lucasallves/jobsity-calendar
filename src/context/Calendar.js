@@ -18,6 +18,6 @@ const CalendarContext = createContext({
   updateReminder: () => { },
   deleteSingleReminder: () => { },
   deleteRemindersByDate: () => { }
-})
+});
 
 export default CalendarContext;

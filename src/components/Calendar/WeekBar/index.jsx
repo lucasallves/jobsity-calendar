@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { weekNames } from 'utils/calendar';
 import { Container, WeekLetter } from './styles';
 
 function WeekBar() {
-  const [weekNames] = useState(['S', 'M', 'T', 'W', 'T', 'F', 'S']);
-
   return (
     <Container>
       {weekNames.map((name, index) => <WeekLetter key={name + index}>{name}</WeekLetter>)}

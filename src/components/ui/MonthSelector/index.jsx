@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import CalendarContext from 'context/Calendar';
+import { monthList } from 'utils/calendar';
 import {
   Container,
   MonthList,
@@ -17,7 +18,6 @@ function MonthSelector(props) {
   const { show, actions } = props;
   const { navigation, setNavigation } = useContext(CalendarContext);
   const [year, setYear] = useState(navigation.year);
-  const [monthList] = useState(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
 
   function onSelectMonth(monthNumber) {
     setNavigation({ month: monthNumber, year });
