@@ -11,6 +11,7 @@ export const Container = styled.button`
   overflow: hidden;
 
   border-radius: 15px;
+  border: none;
 
   background-color: ${colors.white};
   cursor: pointer;
@@ -37,8 +38,8 @@ export const IconPlus = styled(FaPlus)`
   font-size: 14px;
 
   position: absolute;
-  top: 7px;
-  left: 7px;
+  top: 8px;
+  left: 8px;
   cursor: pointer;
 `;
 

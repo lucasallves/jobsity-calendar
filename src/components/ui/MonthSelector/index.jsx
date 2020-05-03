@@ -1,6 +1,17 @@
 import React, { useState, useContext } from 'react';
-import { Container, MonthList, MonthContainer, Month, YearNavigation, Year, ArrowLeft, ArrowRight, Close } from './styles';
+import PropTypes from 'prop-types';
 import CalendarContext from 'context/Calendar';
+import {
+  Container,
+  MonthList,
+  MonthContainer,
+  Month,
+  YearNavigation,
+  Year,
+  ArrowLeft,
+  ArrowRight,
+  Close
+} from './styles';
 
 function MonthSelector(props) {
   const { show, actions } = props;
@@ -47,5 +58,10 @@ function MonthSelector(props) {
     </Container>
   )
 }
+
+MonthSelector.propTypes = {
+  show: PropTypes.bool.isRequired,
+  actions: PropTypes.object.isRequired
+};
 
 export default MonthSelector;

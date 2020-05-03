@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, IconPlus, Label } from './styles';
 
 function FloatingButton(props) {
@@ -11,5 +12,10 @@ function FloatingButton(props) {
     </Container>
   );
 }
+
+FloatingButton.propTypes = {
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default FloatingButton;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import CalendarContext from 'context/Calendar';
 import UIButton from 'components/ui/Button';
 import weatherService from 'services/weather';
@@ -142,5 +143,11 @@ function RemindersForm(props) {
     </Container>
   );
 }
+
+RemindersForm.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  actions: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
+};
 
 export default RemindersForm;

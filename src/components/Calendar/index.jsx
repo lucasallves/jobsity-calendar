@@ -4,7 +4,7 @@ import ActionBar from './ActionBar';
 import WeekBar from './WeekBar';
 import DaysList from './DaysList';
 
-function Calendar({ setDate }) {
+function Calendar() {
   return (
     <Container>
       <ActionBar />
