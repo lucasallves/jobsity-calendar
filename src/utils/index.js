@@ -1,4 +1,4 @@
-function orderByTime(list) {
+function sortByTime(list) {
   const sorted = list.sort((a, b) => {
     const time1 = parseInt(a.time.replace(':', ''));
     const time2 = parseInt(b.time.replace(':', ''));
@@ -9,4 +9,4 @@ function orderByTime(list) {
   return sorted;
 }
 
-export default { orderByTime }
+export default { sortByTime }

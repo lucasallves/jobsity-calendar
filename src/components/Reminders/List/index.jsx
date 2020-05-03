@@ -7,7 +7,7 @@ import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText, Cle
 
 function Reminders() {
   const { reminders, selectedDate, deleteRemindersByDate } = useContext(CalendarContext);
-  const todayReminders = utils.orderByTime(reminders.filter(reminder => reminder.date === selectedDate.fullDay));
+  const todayReminders = utils.sortByTime(reminders.filter(reminder => reminder.date === selectedDate.fullDay));
 
   const DEFAULT_FORM_DATA = {
     text: '',

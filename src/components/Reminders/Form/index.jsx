@@ -133,7 +133,7 @@ function RemindersForm(props) {
             type="text"
             placeholder="What time?"
             value={reminder.time}
-            onChange={e => onTimeChange(e.target.value)} />
+            onChange={e => onInputChange('time', e.target.value)} />
         </FormItem>
         <FormItem>
           <Label>Pick a color:</Label>
