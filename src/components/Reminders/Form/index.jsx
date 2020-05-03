@@ -33,6 +33,13 @@ function RemindersForm(props) {
   }, [data, selectedDate.fullDay]);
 
   useEffect(() => {
+    if (reminder) {
+      setReminder({ ...reminder, date: selectedDate.fullDay });
+    }
+    // eslint-disable-next-line
+  }, [selectedDate.fullDay]);
+
+  useEffect(() => {
     const formElement = document.querySelector('.reminders-form');
     if (formElement) formElement.scrollTo(0, 0);
   }, [visible]);
