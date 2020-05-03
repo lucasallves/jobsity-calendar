@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 
 import { Container, Wrapper, Side } from './styles';
-import SelectedDay from '../components/SelectedDay';
-import Calendar from '../components/Calendar';
-
-import CalendarContext from '../context/Calendar';
+import SelectedDay from 'components/SelectedDay';
+import Calendar from 'components/Calendar';
+import CalendarContext from 'context/Calendar';
 
 function App() {
   const day = parseInt(dayjs().format('DD'));

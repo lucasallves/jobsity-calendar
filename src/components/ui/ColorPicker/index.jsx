@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, InputRadio } from './styles.js';
-import reminderColors from '../../../theme/reminderColors';
+import reminderColors from 'theme/reminderColors';
 
 function ColorPicker(props) {
   const { value, onChange } = props;

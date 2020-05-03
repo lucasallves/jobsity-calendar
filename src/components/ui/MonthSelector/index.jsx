@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Container, MonthList, MonthContainer, Month, YearNavigation, Year, ArrowLeft, ArrowRight, Close } from './styles';
-import CalendarContext from '../../../context/Calendar';
+import CalendarContext from 'context/Calendar';
 
 function MonthSelector(props) {
   const { show, actions } = props;

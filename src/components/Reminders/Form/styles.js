@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from '../../../theme/colors';
+import colors from 'theme/colors';
 import { FaTimes } from 'react-icons/fa';
 import InputMask from "react-input-mask";
 

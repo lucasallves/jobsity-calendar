@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import colors from '../../../theme/colors';
+import colors from 'theme/colors';
 
 export const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import utils from '../../../utils/calendar';
-import CalendarContext from '../../../context/Calendar';
+import utils from 'utils/calendar';
+import CalendarContext from 'context/Calendar';
 import { Container, DayContainer, Day, ReminderDot } from './styles';
 
 function DaysList() {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
-import colors from '../../../theme/colors';
+import colors from 'theme/colors';
 
 export const Container = styled.div`
   position: absolute;

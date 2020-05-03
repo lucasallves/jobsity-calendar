@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import CalendarContext from '../../../context/Calendar';
-import FloatingButton from '../../ui/FloatingButton';
-import RemindersForm from '../Form';
-import utils from '../../../utils';
+import CalendarContext from 'context/Calendar';
+import FloatingButton from 'components/ui/FloatingButton';
+import RemindersForm from 'components/Reminders/Form';
+import utils from 'utils';
 import { Container, List, EmptyMessage, ListItem, IconWeather, ListItemText, ClearLink } from './styles';
 
 function Reminders() {

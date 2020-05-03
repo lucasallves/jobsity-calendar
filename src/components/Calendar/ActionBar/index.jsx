@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Container, MonthName, ArrowLeft, ArrowRight } from './styles';
-import MonthSelector from '../../ui/MonthSelector';
-import CalendarContext from '../../../context/Calendar';
-import utils from '../../../utils/calendar';
+import MonthSelector from 'components/ui/MonthSelector';
+import CalendarContext from 'context/Calendar';
+import utils from 'utils/calendar';
 
 function ActionBar() {
   const [showSelector, setShowSelector] = useState(false);

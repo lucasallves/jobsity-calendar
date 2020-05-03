@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import CalendarContext from '../../../context/Calendar';
-import UIButton from '../../ui/Button';
-import weatherService from '../../../services/weather';
-import { titlelize, formatDate } from '../../../utils/formatters';
-import ColorPicker from '../../ui/ColorPicker';
+import CalendarContext from 'context/Calendar';
+import UIButton from 'components/ui/Button';
+import weatherService from 'services/weather';
+import { titlelize, formatDate } from 'utils/formatters';
+import ColorPicker from 'components/ui/ColorPicker';
 
 import {
   Container,
