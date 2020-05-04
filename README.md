@@ -2,7 +2,7 @@
 A demo calendar using React.
 
 ## Demo
-[Demo](https://i.imgur.com/GLNDZ1d.gif)
+![Demo](https://i.imgur.com/GLNDZ1d.gif)
 
 ## Installing
 Install all the project dependecies.
