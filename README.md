@@ -4,7 +4,7 @@ A demo calendar using React.
 ## Demo
 ![Demo](https://i.imgur.com/GLNDZ1d.gif)
 <br/>
-[See full demo here](https://www.youtube.com/watch?v=bPn5uZNEe_A)
+[See full video here](https://www.youtube.com/watch?v=bPn5uZNEe_A)
 
 ## Installing
 Install all the project dependecies.
