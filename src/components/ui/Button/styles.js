@@ -13,6 +13,7 @@ export const Container = styled.button`
   outline: none;
   margin: 0 auto;
   min-width: 100px;
+  border: none;
 
   &:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
